@@ -680,8 +680,8 @@ def on_closing():
             "arbus_lvl": arbus.lvl, 
             "leon_lvl": leon.lvl
             }
-        with open('save.json', 'w') as save_fl:
-            json.dump(resave_list, save_fl, indent=4)
+        with open('save.json', 'w', encoding='utf-8') as save_fl:
+            json.dump(resave_list, save_fl, indent=4, ensure_ascii=False)
         window.destroy()
 window.protocol("WM_DELETE_WINDOW", on_closing)
 
